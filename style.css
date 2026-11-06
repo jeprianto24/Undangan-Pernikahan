@@ -490,17 +490,18 @@ section { padding: 40px 25px; }
     margin-bottom: 8px !important;
 }
 
-/* Atur elemen sebelum muncul (posisi agak ke bawah dan transparan) */
+/* Atur elemen sebelum muncul (posisi agak ke bawah, mengecil, dan transparan untuk efek pop-up) */
 .reveal {
     opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease-out;
+    transform: translateY(45px) scale(0.92);
+    transition: opacity 0.85s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.85s cubic-bezier(0.34, 1.56, 0.64, 1);
+    will-change: opacity, transform;
 }
 
-/* Ketika elemen terscroll masuk ke layar, posisinya kembali normal */
+/* Ketika elemen terscroll masuk ke layar, membal naik kembali normal */
 .reveal.active {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
 }
 /* ========================================================
    EFEK POP-UP & GAYA BERGULIR ELASTIS (ALA NDINVITE)
