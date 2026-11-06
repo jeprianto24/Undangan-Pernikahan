@@ -43,7 +43,7 @@ body {
     max-width: 480px;
     height: 100vh;
     background: linear-gradient(rgba(35, 50, 40, 0.85), rgba(35, 50, 40, 0.85)), 
-                url('assets/bg-cover.jpeg') center/cover no-repeat;
+                url('bg-cover.jpeg') center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;

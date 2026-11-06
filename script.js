@@ -14,7 +14,7 @@ let isAutoScrolling = false;
 
 // 2. PENGATURAN MUSIK & BUKA UNDANGAN
 let isPlaying = false;
-let backgroundMusic = new Audio('assets/lagu.mp3'); // Pastikan file lagu.mp3 ada di dalam folder assets
+let backgroundMusic = new Audio('lagu.mp3'); // File lagu.mp3 berada di folder utama (root)
 backgroundMusic.loop = true;
 
 function bukaUndangan() {
