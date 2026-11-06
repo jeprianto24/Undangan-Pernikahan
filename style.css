@@ -42,8 +42,8 @@ body {
     width: 100%;
     max-width: 480px;
     height: 100vh;
-    background: linear-gradient(rgba(35, 50, 40, 0.85), rgba(35, 50, 40, 0.85)), 
-                url('bg-cover.jpeg') center/cover no-repeat;
+    background-color: #233228;
+    background: linear-gradient(rgba(25, 38, 30, 0.82), rgba(25, 38, 30, 0.88)), url('bg-cover.jpeg') center/cover no-repeat, #233228;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -389,6 +389,14 @@ section { padding: 40px 25px; }
     box-shadow: 0 10px 30px rgba(30, 45, 35, 0.2);
     border: 1px solid rgba(212, 175, 55, 0.4);
     z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.bottom-nav.nav-tampil {
+    opacity: 1;
+    visibility: visible;
 }
 
 .nav-item {

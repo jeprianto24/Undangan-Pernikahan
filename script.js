@@ -24,6 +24,10 @@ function bukaUndangan() {
         heroCover.classList.add('hidden-cover');
     }
     
+    // Munculkan menu navigasi bawah
+    const bottomNav = document.querySelector('.bottom-nav');
+    if (bottomNav) bottomNav.classList.add('nav-tampil');
+
     // Buka kunci scroll halaman utama
     document.body.style.overflow = 'auto';
 
