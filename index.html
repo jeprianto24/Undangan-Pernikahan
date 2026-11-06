@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan - Tandi & Jeni</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. COVER / SAMPUL DEPAN -->
+    <div class="hero">
+        <div class="hero-content">
+            <p class="sub-title">The Wedding Of</p>
+            <h1 class="cover-nama">Tandi & Jeni</h1>
+            <p class="yth">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+            <h2 id="nama-tamu">Tamu Undangan</h2>
+            <button onclick="bukaUndangan()" class="btn-buka">
+                <i class="fas fa-envelope-open"></i> Buka Undangan
+            </button>
+        </div>
+    </div>
+
+    <!-- 2. KOTAK UTAMA ISI UNDANGAN -->
+    <div id="konten">
+        
+        <!-- SECTION 1: HOME / FOTO UTAMA FULL-WIDTH DENGAN SOFT FADE -->
+        <section id="home" class="hero-pasangan">
+            <div class="bunga-header-container">
+                <img src="assets/bunga-atas.png" alt="Hiasan Bunga Atas" class="bunga-atas" onerror="this.style.display='none'">
+            </div>
+
+            <div class="overlay-text">
+                <p class="sub-wedding">THE WEDDING OF</p>
+                <h1 class="nama-mempelai-peta">Tandi & Jeni</h1>
+            </div>
+
+            <!-- Wadah Slideshow Foto Full Width -->
+            <div class="frame-foto-utama">
+                <img src="assets/pasangan.jpeg" alt="Foto 1" class="foto-slider active" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=500&q=80'">
+                <img src="assets/pria.jpeg" alt="Foto 2" class="foto-slider" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80'">
+                <img src="assets/wanita.jpeg" alt="Foto 3" class="foto-slider" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'">
+                <img src="assets/1.jpeg" alt="Foto 4" class="foto-slider" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'">
+            </div>
+
+            <div class="bunga-footer-container">
+                <img src="assets/bunga-bawah.png" alt="Hiasan Bunga Bawah" class="bunga-bawah" onerror="this.style.display='none'">
+            </div>
+        </section>
+
+        <!-- COUNTDOWN TIMER -->
+        <section class="countdown-section">
+            <div class="countdown-container">
+                <div class="countdown-box"><span id="days">0</span><p>DAY</p></div>
+                <div class="countdown-box"><span id="hours">0</span><p>HOUR</p></div>
+                <div class="countdown-box"><span id="minutes">0</span><p>MINUTE</p></div>
+                <div class="countdown-box"><span id="seconds">0</span><p>SECOND</p></div>
+            </div>
+        </section>
+
+        <!-- Bunga Pemisah -->
+        <div class="divider-bunga">
+            <img src="assets/bunga-bawah.png" alt="Pembatas" style="max-width: 220px; height: auto;">
+        </div>
+
+        <!-- SALAM PEMBUKA -->
+        <section class="salam">
+            <p class="ayat">"Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."</p>
+            <p class="surah">(Matius 19:6)</p>
+            <hr class="divider">
+            <p class="salam-teks">Atas Kasih dan Karunia Tuhan Yesus Kristus, kami bermaksud menyelenggarakan Pemberkatan Pernikahan putra-putri kami:</p>
+        </section>
+
+        <!-- Bunga Pemisah -->
+       <div class="divider-bunga">
+                    <img src="assets/bunga-pembatas.png" alt="Pembatas" style="max-width: 220px; height: auto;">
+                </div>
+
+     <!-- PROFIL MEMPELAI (ZIG-ZAG) -->
+        <section id="mempelai" class="mempelai-container">
+            <h2 class="section-title">Mempelai</h2>
+            
+            <div class="mempelai-layout-baru">
+                <!-- MEMPELAI PRIA -->
+                <div class="mempelai-row">
+                    <div class="mempelai-foto-box">
+                        <img src="assets/pria.jpeg" alt="Mempelai Pria" class="foto-mempelai-bulat" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80'">
+                    </div>
+                    <div class="mempelai-info">
+                        <h3 class="nama-panggilan">Tandipuang <span style="font-size: 1.1rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; color: #36463c;">, S.T</span></h3>
+                        <p class="orangtua" style="margin-top: 10px;">
+                            Putra dari Pasangan Bpk. Bamba & Ibu Sarah<br>
+                            (Ambe' Limbong Karaeng & Indo' Limbong Karaeng)
+                        </p>
+                        <a href="https://instagram.com" target="_blank" class="btn-ig"><i class="fab fa-instagram"></i> Instagram</a>
+                    </div>
+                </div>
+
+                <!-- SIMBOL & -->
+                <div class="simbol-dan-tengah">&</div>
+
+                <!-- MEMPELAI WANITA -->
+                <div class="mempelai-row">
+                    <div class="mempelai-info" style="text-align: left;">
+                        <h3 class="nama-panggilan">Jeniati <span style="font-size: 1.1rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; color: #36463c;">, S.Pd, Gr.</span></h3>
+                        <p class="orangtua" style="margin-top: 10px;">
+                            Putri dari Pasangan Bpk. Alm. Benyamin & Ibu Lena<br>
+                            (Alm. Papa Minggu & Mama Minggu)
+                        </p>
+                        <a href="https://instagram.com" target="_blank" class="btn-ig"><i class="fab fa-instagram"></i> Instagram</a>
+                    </div>
+                    <div class="mempelai-foto-box">
+                        <img src="assets/wanita.jpeg" alt="Mempelai Wanita" class="foto-mempelai-bulat" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RANGKAIAN ACARA -->
+        <section id="acara" class="acara-section">
+            <h2>Rangkaian Acara</h2>
+            <div class="acara-grid">
+                <!-- Acara 1 -->
+                <div class="card-acara">
+                    <h3>IBADAH PERSIAPAN</h3>
+                    <p class="tanggal">📅 Senin, 21 Desember 2026</p>
+                    <p class="jam">⏰ Pukul 17.00 WITA - Selesai</p>
+                    <p class="lokasi">📍 <strong>Rumah Mempelai Perempuan</strong><br> 297V+F9, Orobua, Kec. Sesenapadang, Kabupaten Mamasa, Sulawesi Barat 91365</p>
+                </div>
+
+                <div class="divider-bunga">
+                    <img src="assets/bunga-pembatas.png" alt="Pembatas" style="max-width: 220px; height: auto;">
+                </div>
+
+                <!-- Acara 2 -->
+                <div class="card-acara">
+                    <h3>PEMBERKATAN NIKAH</h3>
+                    <p class="tanggal">📅 Selasa, 22 Desember 2026</p>
+                    <p class="jam">⏰ Pukul 09.00 WITA - Selesai</p>
+                    <p class="lokasi">📍 <strong>Gedung Gereja Jemaat Bahtera Pongka</strong><br> 297V+F9, Orobua, Kec. Sesenapadang, Kabupaten Mamasa, Sulawesi Barat 91365</p>
+                </div>
+
+                <div class="divider-bunga">
+                    <img src="assets/bunga-pembatas.png" alt="Pembatas" style="max-width: 220px; height: auto;">
+                </div>
+
+                <!-- Acara 3 -->
+                <div class="card-acara">
+                    <h3>RESEPSI PERNIKAHAN</h3>
+                    <p class="tanggal">📅 Selasa, 22 Desember 2026</p>
+                    <p class="jam">⏰ Pukul 11.30 WITA - Selesai</p>
+                    <p class="lokasi">📍 <strong>Kediaman Mempelai Wanita</strong><br> 297V+F9, Orobua, Kec. Sesenapadang, Kabupaten Mamasa, Sulawesi Barat 91365</p>
+                </div>
+            </div>
+
+            <div class="divider-bunga">
+                <img src="assets/bunga-pembatas.png" alt="Pembatas" style="max-width: 220px; height: auto;">
+            </div>
+            
+            <!-- MAPS -->
+            <div id="lokasi" class="maps-box">
+                <h3>Denah Lokasi Acara</h3>
+                <div class="map-embed-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.952!2d119.3933204!3d-2.9863423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d937500457fd15f%3A0x3c734b4b2c1!2sRumah%20jely!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" width="100%" height="320" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <a href="https://www.google.com/maps/place/Rumah+jely/@-2.9863423,119.3933204,17z" target="_blank" class="btn-maps" style="margin-top: 15px;">📍 Buka di Google Maps</a>
+            </div>
+        </section>
+
+        <!-- SECTION GALERI FOTO -->
+        <section id="galeri" class="galeri-section">
+            <h2>Galeri Foto</h2>
+            <p class="sub-galeri">Momen Bahagia Kami</p>
+            <div class="galeri-grid">
+                <div class="galeri-item"><img src="assets/pasangan.jpeg" alt="Galeri" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=500&q=80'"></div>
+                <div class="galeri-item"><img src="assets/pria.jpeg" alt="Galeri" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80'"></div>
+                <div class="galeri-item"><img src="assets/wanita.jpeg" alt="Galeri" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'"></div>
+                <div class="galeri-item"><img src="assets/1.jpeg" alt="Galeri" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'"></div>
+                <div class="galeri-item"><img src="assets/2.jpeg" alt="Galeri" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'"></div>
+                <div class="galeri-item"><img src="assets/3.jpeg" alt="Galeri" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'"></div>
+            </div>
+        </section>
+
+        <!-- SECTION RSVP & BUKU TAMU -->
+        <section id="rsvp" class="rsvp-section">
+            <h2>Konfirmasi Kehadiran</h2>
+            <p class="sub-rsvp">Berikan konfirmasi kehadiran & ucapan doa restu</p>
+
+            <form id="rsvp-form" class="rsvp-form" onsubmit="kirimUcapan(event)">
+                <div class="form-group">
+                    <label for="nama">Nama Anda</label>
+                    <input type="text" id="nama" placeholder="Masukkan nama Anda" required>
+                </div>
+                <div class="form-group">
+                    <label for="status">Konfirmasi Kehadiran</label>
+                    <select id="status" required>
+                        <option value="">-- Pilih Kehadiran --</option>
+                        <option value="Hadir">Hadir</option>
+                        <option value="Tidak Hadir">Tidak Hadir</option>
+                        <option value="Ragu-ragu">Ragu-ragu</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pesan">Ucapan & Doa Restu</label>
+                    <textarea id="pesan" rows="4" placeholder="Tuliskan ucapan & doa untuk kedua mempelai..." required></textarea>
+                </div>
+                <button type="submit" class="btn-kirim">Kirim Konfirmasi</button>
+            </form>
+
+            <div class="statistik-rsvp">
+                <div class="stat-box hadir"><span id="stat-hadir">0</span><p>HADIR</p></div>
+                <div class="stat-box tidak-hadir"><span id="stat-tidak">0</span><p>TIDAK HADIR</p></div>
+                <div class="stat-box ragu"><span id="stat-ragu">0</span><p>RAGU-RAGU</p></div>
+            </div>
+
+            <div class="daftar-ucapan-container">
+                <h3>Ucapan Selamat (<span id="jumlah-ucapan">0</span>)</h3>
+                <div id="daftar-ucapan" class="daftar-ucapan-box">
+                    <p style="font-size: 0.85rem; color: #666; text-align: center;">Belum ada ucapan. Jadilah yang pertama memberikan ucapan!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PENUTUP -->
+        <section class="penutup">
+            <p class="salam-teks">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.</p>
+            <p class="hormat">Kami yang berbahagia,</p>
+            <h2 class="nama-penutup">Tandi & Jeni</h2>
+        </section>
+
+    </div>
+
+    <!-- BOTTOM NAVIGATION BAR -->
+    <div class="bottom-nav">
+        <a href="#home" class="nav-item"><i class="fas fa-home"></i></a>
+        <a href="#mempelai" class="nav-item"><i class="fas fa-users"></i></a>
+        <a href="#acara" class="nav-item"><i class="fas fa-calendar-alt"></i></a>
+        <a href="#galeri" class="nav-item"><i class="fas fa-images"></i></a>
+        <a href="#lokasi" class="nav-item"><i class="fas fa-map-marked-alt"></i></a>
+        <button id="scroll-btn" onclick="toggleAutoScroll()" class="nav-item"><i class="fas fa-arrow-down" id="scroll-icon"></i></button>
+        <button onclick="toggleMusic()" class="nav-item"><i class="fas fa-music" id="music-icon"></i></button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
