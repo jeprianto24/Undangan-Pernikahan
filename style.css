@@ -446,3 +446,16 @@ section { padding: 40px 25px; }
     line-height: 1.2 !important; /* Membuat jarak baris lebih rapat */
     margin-bottom: 8px !important;
 }
+
+/* Atur elemen sebelum muncul (posisi agak ke bawah dan transparan) */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+/* Ketika elemen terscroll masuk ke layar, posisinya kembali normal */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
