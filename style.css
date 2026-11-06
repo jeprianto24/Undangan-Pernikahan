@@ -73,12 +73,27 @@ body {
     text-transform: uppercase;
 }
 
-.cover-nama, h1, .nama-penutup {
+.cover-nama {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0 20px 0;
+}
+.cover-nama .nama-teks {
     font-family: 'Great Vibes', cursive;
-    font-size: 4rem;
+    font-size: 3.8rem;
     color: #ffffff;
-    margin: 15px 0;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    line-height: 1.1;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+.cover-nama .simbol-dan {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8rem;
+    color: #f7e1b5; /* Sentuhan emas elegan */
+    line-height: 0.85;
+    margin: 2px 0;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 
 .yth {
@@ -158,10 +173,24 @@ body {
 }
 
 .nama-mempelai-peta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 8px 0;
+}
+.nama-mempelai-peta .nama-teks {
     font-family: 'Great Vibes', cursive;
     font-size: 3.2rem;
     color: #2c4033;
-    margin: 5px 0;
+    line-height: 1.1;
+}
+.nama-mempelai-peta .simbol-dan {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.4rem;
+    color: #a67c3b;
+    line-height: 0.85;
+    margin: 2px 0;
 }
 
 /* COUNTDOWN TIMER MINIMALIS BERKELAS */
@@ -365,10 +394,24 @@ section { padding: 40px 25px; }
 .penutup { background: transparent; padding-bottom: 100px; }
 .hormat { margin-top: 15px; font-size: 0.85rem; color: #556d5e; }
 .nama-penutup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+.nama-penutup .nama-teks {
     font-family: 'Great Vibes', cursive;
-    font-size: 3.5rem;
+    font-size: 3.4rem;
     color: #2c4033 !important;
-    margin-top: 5px;
+    line-height: 1.1;
+}
+.nama-penutup .simbol-dan {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.4rem;
+    color: #a67c3b !important;
+    line-height: 0.85;
+    margin: 2px 0;
 }
 
 /* BOTTOM NAVIGATION */
@@ -458,4 +501,44 @@ section { padding: 40px 25px; }
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+}
+/* ========================================================
+   EFEK POP-UP & GAYA BERGULIR ELASTIS (ALA NDINVITE)
+   ======================================================== */
+[data-aos] {
+    pointer-events: none;
+}
+[data-aos].aos-animate {
+    pointer-events: auto;
+}
+
+/* Bouncy Pop-Up Spring Animation */
+[data-aos="zoom-in"] {
+    transform: scale(0.65) !important;
+    opacity: 0 !important;
+    transition-property: transform, opacity !important;
+    transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+[data-aos="zoom-in"].aos-animate {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+}
+
+[data-aos="zoom-in-up"] {
+    transform: scale(0.7) translateY(45px) !important;
+    opacity: 0 !important;
+    transition-property: transform, opacity !important;
+    transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+[data-aos="zoom-in-up"].aos-animate {
+    transform: scale(1) translateY(0) !important;
+    opacity: 1 !important;
+}
+
+/* Indikator tombol Auto-Scroll saat aktif */
+#scroll-btn.active {
+    background: #4a5e51 !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 15px rgba(74, 94, 81, 0.8) !important;
+    transform: scale(1.1);
 }

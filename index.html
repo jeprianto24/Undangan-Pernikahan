@@ -7,7 +7,9 @@
     <!-- Google Fonts & FontAwesome Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=2">
+    <!-- AOS (Animate On Scroll) Library untuk Efek Pop-Up -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -15,7 +17,7 @@
     <div class="hero">
         <div class="hero-content">
             <p class="sub-title">The Wedding Of</p>
-            <h1 class="cover-nama">Tandi & Jeni</h1>
+            <h1 class="cover-nama"><span class="nama-teks">Tandi</span><span class="simbol-dan">&</span><span class="nama-teks">Jeni</span></h1>
             <p class="yth">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
             <h2 id="nama-tamu">Tamu Undangan</h2>
             <button onclick="bukaUndangan()" class="btn-buka">
@@ -29,41 +31,40 @@
         
         <!-- SECTION 1: HOME / FOTO UTAMA FULL-WIDTH DENGAN SOFT FADE -->
         <section id="home" class="hero-pasangan">
-            <div class="bunga-header-container">
-                <img src="bunga-atas.png" alt="Hiasan Bunga Bawah" class="bunga-bawah" onerror="this.style.display='none'">
+            <div class="bunga-header-container" data-aos="zoom-in" data-aos-duration="1000">
+                <img src="bunga-atas.png" alt="Hiasan Bunga Atas" class="bunga-atas" onerror="this.style.display='none'">
             </div>
 
-            <div class="overlay-text">
+            <div class="overlay-text" data-aos="zoom-in" data-aos-duration="900">
                 <p class="sub-wedding">THE WEDDING OF</p>
-                <h1 class="nama-mempelai-peta">Tandi & Jeni</h1>
+                <h1 class="nama-mempelai-peta"><span class="nama-teks">Tandi</span><span class="simbol-dan">&</span><span class="nama-teks">Jeni</span></h1>
             </div>
 
             <!-- Wadah Slideshow Foto Full Width -->
-            <div class="frame-foto-utama">
+            <div class="frame-foto-utama" data-aos="zoom-in" data-aos-duration="1100">
                 <img src="pasangan.jpeg" alt="Foto 1" class="foto-slider active" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=500&q=80'">
                 <img src="pria.jpeg" alt="Foto 2" class="foto-slider" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80'">
                 <img src="wanita.jpeg" alt="Foto 3" class="foto-slider" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'">
                 <img src="1.jpeg" alt="Foto 4" class="foto-slider" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'">
             </div>
 
-            <div class="bunga-footer-container">
-                <img src="bunga-pembatas.png" alt="Hiasan Bunga Bawah" class="bunga-bawah" onerror="this.style.display='none'">
+            <div class="bunga-footer-container" data-aos="zoom-in" data-aos-duration="1000">
+                <img src="bunga-bawah.png" alt="Hiasan Bunga Bawah" class="bunga-bawah" onerror="this.style.display='none'">
             </div>
         </section>
 
         <!-- COUNTDOWN TIMER -->
-        <section class="countdown-section">
+        <section class="countdown-section" data-aos="zoom-in-up" data-aos-duration="900">
             <div class="countdown-container">
-                <div class="countdown-box"><span id="days">0</span><p>DAY</p></div>
-                <div class="countdown-box"><span id="hours">0</span><p>HOUR</p></div>
-                <div class="countdown-box"><span id="minutes">0</span><p>MINUTE</p></div>
-                <div class="countdown-box"><span id="seconds">0</span><p>SECOND</p></div>
+                <div class="countdown-box" data-aos="zoom-in" data-aos-delay="100"><span id="days">0</span><p>DAY</p></div>
+                <div class="countdown-box" data-aos="zoom-in" data-aos-delay="200"><span id="hours">0</span><p>HOUR</p></div>
+                <div class="countdown-box" data-aos="zoom-in" data-aos-delay="300"><span id="minutes">0</span><p>MINUTE</p></div>
+                <div class="countdown-box" data-aos="zoom-in" data-aos-delay="400"><span id="seconds">0</span><p>SECOND</p></div>
             </div>
         </section>
 
-
         <!-- SALAM PEMBUKA -->
-        <section class="salam">
+        <section class="salam" data-aos="zoom-in" data-aos-duration="1000">
             <p class="ayat">"Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."</p>
             <p class="surah">(Matius 19:6)</p>
             <hr class="divider">
@@ -71,17 +72,17 @@
         </section>
 
         <!-- Bunga Pemisah -->
-       <div class="divider-bunga">
-                    <img src="bunga-pembatas.png" alt="Pembatas" style="max-width: 220px; height: auto;">
-                </div>
+        <div class="divider-bunga" data-aos="zoom-in" data-aos-duration="900">
+            <img src="bunga-pembatas.png" alt="Pembatas" style="max-width: 220px; height: auto;">
+        </div>
 
-     <!-- PROFIL MEMPELAI (ZIG-ZAG) -->
+        <!-- PROFIL MEMPELAI (ZIG-ZAG) -->
         <section id="mempelai" class="mempelai-container">
-            <h2 class="section-title">Mempelai</h2>
+            <h2 class="section-title" data-aos="zoom-in">Mempelai</h2>
             
             <div class="mempelai-layout-baru">
                 <!-- MEMPELAI PRIA -->
-                <div class="mempelai-row">
+                <div class="mempelai-row" data-aos="zoom-in-up" data-aos-duration="950">
                     <div class="mempelai-foto-box">
                         <img src="pria.jpeg" alt="Mempelai Pria" class="foto-mempelai-bulat" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80'">
                     </div>
@@ -96,10 +97,10 @@
                 </div>
 
                 <!-- SIMBOL & -->
-                <div class="simbol-dan-tengah">&</div>
+                <div class="simbol-dan-tengah" data-aos="zoom-in" data-aos-delay="150">&</div>
 
                 <!-- MEMPELAI WANITA -->
-                <div class="mempelai-row">
+                <div class="mempelai-row" data-aos="zoom-in-up" data-aos-duration="950">
                     <div class="mempelai-info" style="text-align: left;">
                         <h3 class="nama-panggilan">Jeniati <span style="font-size: 1.1rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; color: #36463c;">, S.Pd, Gr.</span></h3>
                         <p class="orangtua" style="margin-top: 10px;">
@@ -117,34 +118,34 @@
 
         <!-- RANGKAIAN ACARA -->
         <section id="acara" class="acara-section">
-            <h2>Rangkaian Acara</h2>
+            <h2 data-aos="zoom-in">Rangkaian Acara</h2>
             <div class="acara-grid">
                 <!-- Acara 1 -->
-                <div class="card-acara">
+                <div class="card-acara" data-aos="zoom-in-up" data-aos-duration="900">
                     <h3>IBADAH PERSIAPAN</h3>
                     <p class="tanggal">📅 Senin, 21 Desember 2026</p>
                     <p class="jam">⏰ Pukul 17.00 WITA - Selesai</p>
                     <p class="lokasi">📍 <strong>Rumah Mempelai Perempuan</strong><br> 297V+F9, Orobua, Kec. Sesenapadang, Kabupaten Mamasa, Sulawesi Barat 91365</p>
                 </div>
 
-                <div class="divider-bunga">
+                <div class="divider-bunga" data-aos="zoom-in">
                     <img src="bunga-pembatas.png" alt="Pembatas" style="max-width: 220px; height: auto;">
                 </div>
 
                 <!-- Acara 2 -->
-                <div class="card-acara">
+                <div class="card-acara" data-aos="zoom-in-up" data-aos-duration="900">
                     <h3>PEMBERKATAN NIKAH</h3>
                     <p class="tanggal">📅 Selasa, 22 Desember 2026</p>
                     <p class="jam">⏰ Pukul 09.00 WITA - Selesai</p>
                     <p class="lokasi">📍 <strong>Gedung Gereja Jemaat Bahtera Pongka</strong><br> 297V+F9, Orobua, Kec. Sesenapadang, Kabupaten Mamasa, Sulawesi Barat 91365</p>
                 </div>
 
-                <div class="divider-bunga">
+                <div class="divider-bunga" data-aos="zoom-in">
                     <img src="bunga-pembatas.png" alt="Pembatas" style="max-width: 220px; height: auto;">
                 </div>
 
                 <!-- Acara 3 -->
-                <div class="card-acara">
+                <div class="card-acara" data-aos="zoom-in-up" data-aos-duration="900">
                     <h3>RESEPSI PERNIKAHAN</h3>
                     <p class="tanggal">📅 Selasa, 22 Desember 2026</p>
                     <p class="jam">⏰ Pukul 11.30 WITA - Selesai</p>
@@ -152,40 +153,40 @@
                 </div>
             </div>
 
-            <div class="divider-bunga">
+            <div class="divider-bunga" data-aos="zoom-in">
                 <img src="bunga-pembatas.png" alt="Pembatas" style="max-width: 220px; height: auto;">
             </div>
             
             <!-- MAPS -->
-            <div id="lokasi" class="maps-box">
+            <div id="lokasi" class="maps-box" data-aos="zoom-in" data-aos-duration="1000">
                 <h3>Denah Lokasi Acara</h3>
                 <div class="map-embed-container">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.952!2d119.3933204!3d-2.9863423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d937500457fd15f%3A0x3c734b4b2c1!2sRumah%20jely!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" width="100%" height="320" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
-                <a href="https://www.google.com/maps/place/Rumah+jely/@-2.9863423,119.3933204,17z" target="_blank" class="btn-maps" style="margin-top: 15px;">📍 Buka di Google Maps</a>
+                <a href="https://www.google.com/maps/place/Rumah+jely/@-2.9863423,119.3933204,17z" target="_blank" class="btn-maps" style="margin-top: 15px;" data-aos="zoom-in" data-aos-delay="200">📍 Buka di Google Maps</a>
             </div>
         </section>
 
         <!-- SECTION GALERI FOTO -->
         <section id="galeri" class="galeri-section">
-            <h2>Galeri Foto</h2>
-            <p class="sub-galeri">Momen Bahagia Kami</p>
+            <h2 data-aos="zoom-in">Galeri Foto</h2>
+            <p class="sub-galeri" data-aos="zoom-in">Momen Bahagia Kami</p>
             <div class="galeri-grid">
-                <div class="galeri-item"><img src="pasangan.jpeg" alt="Galeri" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=500&q=80'"></div>
-                <div class="galeri-item"><img src="pria.jpeg" alt="Galeri" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80'"></div>
-                <div class="galeri-item"><img src="wanita.jpeg" alt="Galeri" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'"></div>
-                <div class="galeri-item"><img src="1.jpeg" alt="Galeri" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'"></div>
-                <div class="galeri-item"><img src="2.jpeg" alt="Galeri" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'"></div>
-                <div class="galeri-item"><img src="3.jpeg" alt="Galeri" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'"></div>
+                <div class="galeri-item" data-aos="zoom-in" data-aos-delay="100"><img src="pasangan.jpeg" alt="Galeri" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=500&q=80'"></div>
+                <div class="galeri-item" data-aos="zoom-in" data-aos-delay="200"><img src="pria.jpeg" alt="Galeri" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80'"></div>
+                <div class="galeri-item" data-aos="zoom-in" data-aos-delay="300"><img src="wanita.jpeg" alt="Galeri" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'"></div>
+                <div class="galeri-item" data-aos="zoom-in" data-aos-delay="100"><img src="1.jpeg" alt="Galeri" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'"></div>
+                <div class="galeri-item" data-aos="zoom-in" data-aos-delay="200"><img src="2.jpeg" alt="Galeri" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'"></div>
+                <div class="galeri-item" data-aos="zoom-in" data-aos-delay="300"><img src="3.jpeg" alt="Galeri" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'"></div>
             </div>
         </section>
 
         <!-- SECTION RSVP & BUKU TAMU -->
         <section id="rsvp" class="rsvp-section">
-            <h2>Konfirmasi Kehadiran</h2>
-            <p class="sub-rsvp">Berikan konfirmasi kehadiran & ucapan doa restu</p>
+            <h2 data-aos="zoom-in">Konfirmasi Kehadiran</h2>
+            <p class="sub-rsvp" data-aos="zoom-in">Berikan konfirmasi kehadiran & ucapan doa restu</p>
 
-            <form id="rsvp-form" class="rsvp-form" onsubmit="kirimUcapan(event)">
+            <form id="rsvp-form" class="rsvp-form" onsubmit="kirimUcapan(event)" data-aos="zoom-in-up" data-aos-duration="900">
                 <div class="form-group">
                     <label for="nama">Nama Anda</label>
                     <input type="text" id="nama" placeholder="Masukkan nama Anda" required>
@@ -206,13 +207,13 @@
                 <button type="submit" class="btn-kirim">Kirim Konfirmasi</button>
             </form>
 
-            <div class="statistik-rsvp">
+            <div class="statistik-rsvp" data-aos="zoom-in" data-aos-duration="800">
                 <div class="stat-box hadir"><span id="stat-hadir">0</span><p>HADIR</p></div>
                 <div class="stat-box tidak-hadir"><span id="stat-tidak">0</span><p>TIDAK HADIR</p></div>
                 <div class="stat-box ragu"><span id="stat-ragu">0</span><p>RAGU-RAGU</p></div>
             </div>
 
-            <div class="daftar-ucapan-container">
+            <div class="daftar-ucapan-container" data-aos="zoom-in-up" data-aos-duration="900">
                 <h3>Ucapan Selamat (<span id="jumlah-ucapan">0</span>)</h3>
                 <div id="daftar-ucapan" class="daftar-ucapan-box">
                     <p style="font-size: 0.85rem; color: #666; text-align: center;">Belum ada ucapan. Jadilah yang pertama memberikan ucapan!</p>
@@ -221,10 +222,10 @@
         </section>
 
         <!-- PENUTUP -->
-        <section class="penutup">
+        <section class="penutup" data-aos="zoom-in" data-aos-duration="1000">
             <p class="salam-teks">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.</p>
             <p class="hormat">Kami yang berbahagia,</p>
-            <h2 class="nama-penutup">Tandi & Jeni</h2>
+            <h2 class="nama-penutup" data-aos="zoom-in" data-aos-delay="200"><span class="nama-teks">Tandi</span><span class="simbol-dan">&</span><span class="nama-teks">Jeni</span></h2>
         </section>
 
     </div>
@@ -240,6 +241,8 @@
         <button onclick="toggleMusic()" class="nav-item"><i class="fas fa-music" id="music-icon"></i></button>
     </div>
 
-    <script src="script.js?v=2"></script>
+    <!-- AOS JS Library & Main Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js?v=4"></script>
 </body>
 </html>
