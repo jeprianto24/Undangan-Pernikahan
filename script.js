@@ -9,50 +9,12 @@ if (namaTamu) {
 // Kunci scroll ketika cover aktif di awal
 document.body.style.overflow = 'hidden';
 
-// Fungsi Scroll Reveal (Memunculkan elemen dengan class .reveal saat di-scroll)
-function revealOnScroll() {
-    const reveals = document.querySelectorAll(".reveal");
-
-    reveals.forEach((element) => {
-        const windowHeight = window.innerHeight;
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150; // Jarak trigger sebelum elemen muncul
-
-        if (elementTop < windowHeight - elementVisible) {
-            element.classList.add("active");
-        }
-    });
-}
-
-window.addEventListener("scroll", revealOnScroll);
-
-// Inisialisasi AOS (Animate on Scroll) untuk efek Pop-Up ala ndinvite
-document.addEventListener("DOMContentLoaded", function () {
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 850,
-            easing: 'ease-out-back', // Efek membal / pop-up
-            once: false,              // Animasi berulang saat di-scroll naik & turun
-            mirror: true,
-            offset: 50
-        });
-    }
-
-    muatUcapan();
-    
-    // Otomatis isi nama di form jika namaTamu dari URL tersedia
-    if (typeof namaTamu !== 'undefined' && namaTamu) {
-        const inputNama = document.getElementById('nama');
-        if (inputNama) inputNama.value = namaTamu;
-    }
-
-    // Jalankan sekali saat halaman dimuat untuk elemen di bagian atas
-    revealOnScroll();
-});
+let autoScrollInterval = null;
+let isAutoScrolling = false;
 
 // 2. PENGATURAN MUSIK & BUKA UNDANGAN
 let isPlaying = false;
-let backgroundMusic = new Audio('lagu.mp3'); // File lagu.mp3 berada di folder utama (root)
+let backgroundMusic = new Audio('assets/lagu.mp3'); // Pastikan file lagu.mp3 ada di dalam folder assets
 backgroundMusic.loop = true;
 
 function bukaUndangan() {
@@ -62,18 +24,8 @@ function bukaUndangan() {
         heroCover.classList.add('hidden-cover');
     }
     
-    // Munculkan menu navigasi bawah
-    const bottomNav = document.querySelector('.bottom-nav');
-    if (bottomNav) bottomNav.classList.add('nav-tampil');
-
     // Buka kunci scroll halaman utama
     document.body.style.overflow = 'auto';
-
-    // Refresh animasi pop-up AOS & Scroll Reveal
-    setTimeout(() => {
-        if (typeof AOS !== 'undefined') AOS.refresh();
-        revealOnScroll();
-    }, 250);
 
     // Memutar musik latar belakang
     backgroundMusic.play().then(() => {
@@ -108,24 +60,7 @@ function updateMusicIcon() {
     }
 }
 
-// 3. FITUR AUTO-SCROLL SILKY SMOOTH 60FPS (GAYA BERGULIR HALUS ALA NDINVITE)
-let isAutoScrolling = false;
-let autoScrollAnimFrame = null;
-const scrollSpeed = 1.35; // Kecepatan santai & nyaman untuk membaca
-
-function autoScrollLoop() {
-    if (!isAutoScrolling) return;
-
-    // Berhenti jika sudah mencapai bagian paling bawah halaman
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
-        stopAutoScroll();
-        return;
-    }
-
-    window.scrollBy(0, scrollSpeed);
-    autoScrollAnimFrame = requestAnimationFrame(autoScrollLoop);
-}
-
+// 3. FITUR AUTO-SCROLL (GULIR OTOMATIS & KONTROLNYA)
 function startAutoScroll() {
     isAutoScrolling = true;
     const scrollBtn = document.getElementById('scroll-btn');
@@ -134,15 +69,18 @@ function startAutoScroll() {
     if (scrollBtn) scrollBtn.classList.add('active');
     if (scrollIcon) scrollIcon.className = "fas fa-pause";
 
-    autoScrollAnimFrame = requestAnimationFrame(autoScrollLoop);
+    autoScrollInterval = setInterval(() => {
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
+            stopAutoScroll();
+        } else {
+            window.scrollBy({ top: 1, behavior: 'smooth' });
+        }
+    }, 30);
 }
 
 function stopAutoScroll() {
     isAutoScrolling = false;
-    if (autoScrollAnimFrame) {
-        cancelAnimationFrame(autoScrollAnimFrame);
-        autoScrollAnimFrame = null;
-    }
+    clearInterval(autoScrollInterval);
     
     const scrollBtn = document.getElementById('scroll-btn');
     const scrollIcon = document.getElementById('scroll-icon');
@@ -159,15 +97,11 @@ function toggleAutoScroll() {
     }
 }
 
-// Berhenti jika pengguna menyentuh atau menggulir manual agar tidak berebut kontrol
 window.addEventListener('wheel', () => {
-    if (isAutoScrolling) stopAutoScroll();
-}, { passive: true });
-
-window.addEventListener('touchstart', () => {
-    if (isAutoScrolling) stopAutoScroll();
-}, { passive: true });
-
+    if (isAutoScrolling) {
+        stopAutoScroll();
+    }
+});
 
 // 4. SLIDESHOW FOTO UTAMA (BERGANTI OTOMATIS DI DALAM LINGKARAN/KOTAK)
 let currentPhotoIndex = 0;
@@ -285,3 +219,71 @@ function kirimUcapan(e) {
 
     muatUcapan();
 }
+
+// 7. EFEK MUNCUL SATU PER SATU SAAT DI-SCROLL (INTERSECTION OBSERVER)
+document.addEventListener("DOMContentLoaded", function () {
+    muatUcapan();
+    
+    // Otomatis isi nama di form jika namaTamu dari URL tersedia
+    if (typeof namaTamu !== 'undefined' && namaTamu) {
+        const inputNama = document.getElementById('nama');
+        if (inputNama) inputNama.value = namaTamu;
+    }
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('tampil');
+            }
+        });
+    }, observerOptions);
+
+    const targetElements = document.querySelectorAll('.card-acara, .card-mempelai, .galeri-item, .rsvp-form, .penutup h2');
+    targetElements.forEach(el => {
+        el.classList.add('animasi-muncul');
+        observer.observe(el);
+    });
+});
+// 8. FUNGSI TOMBOL AUTO-SCROLL DI NAVIGASI BAWAH
+function startAutoScroll() {
+    isAutoScrolling = true;
+    const scrollBtn = document.getElementById('scroll-btn');
+    
+    if (scrollBtn) scrollBtn.classList.add('active');
+
+    autoScrollInterval = setInterval(() => {
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
+            stopAutoScroll();
+        } else {
+            window.scrollBy({ top: 1, behavior: 'smooth' });
+        }
+    }, 30);
+}
+
+function stopAutoScroll() {
+    isAutoScrolling = false;
+    clearInterval(autoScrollInterval);
+    
+    const scrollBtn = document.getElementById('scroll-btn');
+    if (scrollBtn) scrollBtn.classList.remove('active');
+}
+
+function toggleAutoScroll() {
+    if (isAutoScrolling) {
+        stopAutoScroll();
+    } else {
+        startAutoScroll();
+    }
+}
+
+window.addEventListener('wheel', () => {
+    if (isAutoScrolling) {
+        stopAutoScroll();
+    }
+});

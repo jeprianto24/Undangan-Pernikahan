@@ -42,8 +42,8 @@ body {
     width: 100%;
     max-width: 480px;
     height: 100vh;
-    background-color: #233228;
-    background: linear-gradient(rgba(25, 38, 30, 0.82), rgba(25, 38, 30, 0.88)), url('bg-cover.jpeg') center/cover no-repeat, #233228;
+    background: linear-gradient(rgba(35, 50, 40, 0.85), rgba(35, 50, 40, 0.85)), 
+                url('assets/bg-cover.jpeg') center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,27 +73,12 @@ body {
     text-transform: uppercase;
 }
 
-.cover-nama {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 15px 0 20px 0;
-}
-.cover-nama .nama-teks {
+.cover-nama, h1, .nama-penutup {
     font-family: 'Great Vibes', cursive;
-    font-size: 3.8rem;
+    font-size: 4rem;
     color: #ffffff;
-    line-height: 1.1;
-    text-shadow: 0 4px 12px rgba(0,0,0,0.6);
-}
-.cover-nama .simbol-dan {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2.8rem;
-    color: #f7e1b5; /* Sentuhan emas elegan */
-    line-height: 0.85;
-    margin: 2px 0;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    margin: 15px 0;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
 .yth {
@@ -173,24 +158,10 @@ body {
 }
 
 .nama-mempelai-peta {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 8px 0;
-}
-.nama-mempelai-peta .nama-teks {
     font-family: 'Great Vibes', cursive;
     font-size: 3.2rem;
     color: #2c4033;
-    line-height: 1.1;
-}
-.nama-mempelai-peta .simbol-dan {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2.4rem;
-    color: #a67c3b;
-    line-height: 0.85;
-    margin: 2px 0;
+    margin: 5px 0;
 }
 
 /* COUNTDOWN TIMER MINIMALIS BERKELAS */
@@ -394,24 +365,10 @@ section { padding: 40px 25px; }
 .penutup { background: transparent; padding-bottom: 100px; }
 .hormat { margin-top: 15px; font-size: 0.85rem; color: #556d5e; }
 .nama-penutup {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 10px 0;
-}
-.nama-penutup .nama-teks {
     font-family: 'Great Vibes', cursive;
-    font-size: 3.4rem;
+    font-size: 3.5rem;
     color: #2c4033 !important;
-    line-height: 1.1;
-}
-.nama-penutup .simbol-dan {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2.4rem;
-    color: #a67c3b !important;
-    line-height: 0.85;
-    margin: 2px 0;
+    margin-top: 5px;
 }
 
 /* BOTTOM NAVIGATION */
@@ -432,14 +389,6 @@ section { padding: 40px 25px; }
     box-shadow: 0 10px 30px rgba(30, 45, 35, 0.2);
     border: 1px solid rgba(212, 175, 55, 0.4);
     z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-.bottom-nav.nav-tampil {
-    opacity: 1;
-    visibility: visible;
 }
 
 .nav-item {
@@ -488,58 +437,4 @@ section { padding: 40px 25px; }
     color: #5e7365;
     line-height: 1.2 !important; /* Membuat jarak baris lebih rapat */
     margin-bottom: 8px !important;
-}
-
-/* Atur elemen sebelum muncul (posisi agak ke bawah, mengecil, dan transparan untuk efek pop-up) */
-.reveal {
-    opacity: 0;
-    transform: translateY(45px) scale(0.92);
-    transition: opacity 0.85s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.85s cubic-bezier(0.34, 1.56, 0.64, 1);
-    will-change: opacity, transform;
-}
-
-/* Ketika elemen terscroll masuk ke layar, membal naik kembali normal */
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-}
-/* ========================================================
-   EFEK POP-UP & GAYA BERGULIR ELASTIS (ALA NDINVITE)
-   ======================================================== */
-[data-aos] {
-    pointer-events: none;
-}
-[data-aos].aos-animate {
-    pointer-events: auto;
-}
-
-/* Bouncy Pop-Up Spring Animation */
-[data-aos="zoom-in"] {
-    transform: scale(0.65) !important;
-    opacity: 0 !important;
-    transition-property: transform, opacity !important;
-    transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1) !important;
-}
-[data-aos="zoom-in"].aos-animate {
-    transform: scale(1) !important;
-    opacity: 1 !important;
-}
-
-[data-aos="zoom-in-up"] {
-    transform: scale(0.7) translateY(45px) !important;
-    opacity: 0 !important;
-    transition-property: transform, opacity !important;
-    transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1) !important;
-}
-[data-aos="zoom-in-up"].aos-animate {
-    transform: scale(1) translateY(0) !important;
-    opacity: 1 !important;
-}
-
-/* Indikator tombol Auto-Scroll saat aktif */
-#scroll-btn.active {
-    background: #4a5e51 !important;
-    color: #ffffff !important;
-    box-shadow: 0 0 15px rgba(74, 94, 81, 0.8) !important;
-    transform: scale(1.1);
 }
